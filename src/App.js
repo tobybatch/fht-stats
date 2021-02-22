@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
+// const axios = require('axios');
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+async function App() {
+	const FETCH_URL = "https://api.tracker.gg/api/v1/bfv/profile/%s/%s";
+
+	const url = FETCH_URL + "/psn/ID_SPARTA";
+
+	const data = await axios.get(url);
+		// .then(function (response) {
+		// 	console.log(response);
+		// })
+		// .catch(function (error) {
+		// 	console.log(error);
+		// });
+
+	console.log(data);
+
+	return (
+		<div className="App">
+			xxx
+		</div>
+	);
 }
 
 export default App;
